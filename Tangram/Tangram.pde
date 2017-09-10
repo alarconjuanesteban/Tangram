@@ -1,6 +1,6 @@
- /* COLORES */
-  
-    color fondo      = color(100, 100, 100),
+/* COLORES */
+                    
+    color fondo      = color(100, 100, 100), 
           amarillo   = color(255, 255, 0),
           aguamarina = color(102, 255, 178),
           naranja    = color(255, 130, 0),
@@ -17,43 +17,50 @@
          yMedioTriGrande1 = random(250, 350),
          xTriGrande1,
          yTriGrande1,
-         rTriGrande1 = random(1,8);
+         rAproxTriGrande1 = random(1,8);
+   int rTriGrande1 = (int) rAproxTriGrande1;
    
    float xMedioTriGrande2 = random(550, 650),
          yMedioTriGrande2 = random(250, 350),
          xTriGrande2,
          yTriGrande2,
-         rTriGrande2 = random(1,8);
+         rAproxTriGrande2 = random(1,8);
+   int rTriGrande2 = (int) rAproxTriGrande2;
    
    float xMedioTriMediano = random(550, 650),
          yMedioTriMediano = random(250, 350),
          xTriMediano,
          yTriMediano,
-         rTriMediano = random(1,8);
+         rAproxTriMediano = random(1,8);
+   int rTriMediano = (int) rAproxTriMediano;
    
    float xMedioTriPequeno1 = random(550, 650),
          yMedioTriPequeno1 = random(250, 350),
          xTriPequeno1,
          yTriPequeno1,
-         rTriPequeno1 = random(1,8);
+         rAproxTriPequeno1 = random(1,8);
+   int rTriPequeno1 = (int) rAproxTriPequeno1;
 
    float xMedioTriPequeno2 = random(550, 650),
          yMedioTriPequeno2 = random(250, 350),
          xTriPequeno2,
          yTriPequeno2,
-         rTriPequeno2 = random(1,8);
+         rAproxTriPequeno2 = random(1,8);
+   int rTriPequeno2 = (int) rAproxTriPequeno2;
    
    float xMedioCuadrado = random(550, 650),
          yMedioCuadrado = random(250, 350),
          xCuadrado, 
          yCuadrado,
-         rCuadrado = random(1,8);
+         rAproxCuadrado = random(1,8);
+   int rCuadrado = (int) rAproxCuadrado;
    
    float xMedioTrapezoide = random(550, 650),
          yMedioTrapezoide = random(250, 350),
          xTrapezoide,
          yTrapezoide,
-         rTrapezoide = random(1,8);
+         rAproxTrapezoide = random(1,8);
+   int rTrapezoide = (int) rAproxTrapezoide;
 
 
 void setup(){
@@ -64,7 +71,6 @@ void setup(){
 void draw(){
   
     background(fondo);
-    //translate(360,60);
   
  /* FIGURAS */
     
