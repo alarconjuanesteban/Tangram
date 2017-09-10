@@ -1,5 +1,6 @@
  /* COLORES */
   
+    color fondo      = color(100, 100, 100);
     color amarillo   = color(255, 255, 0);
     color aguamarina = color(102, 255, 178);
     color naranja    = color(255, 130, 0);
@@ -10,47 +11,35 @@
   
  /* TRANSFORMACIONES */
  
+   int ctrlMov;
+   
    float xTriGrande1 = 0;
    float yTriGrande1 = 0;
    float rTriGrande1 = 0;
-   float cxTriGrande1 = 240;
-   float cyTriGrande1 = 90;
    
    float xTriGrande2 = 480;
    float yTriGrande2 = 0;
    float rTriGrande2 = 90;
-   float cxTriGrande2 = 90;
-   float cyTriGrande2 = 240;
    
    float xTriMediano = 240;
    float yTriMediano = 480;
    float rTriMediano = 180;
-   float cxTriMediano = 170;
-   float cyTriMediano = 70;
    
    float xTriPequeno1 = 480;
    float yTriPequeno1 = 480;
    float rTriPequeno1 = 180;
-   float cxTriPequeno1 = 120;
-   float cyTriPequeno1 = 50;
    
    float xTriPequeno2 = 120;
    float yTriPequeno2 = 360;
    float rTriPequeno2 = 270;
-   float cxTriPequeno2 = 50;
-   float cyTriPequeno2 = 120;
    
    float xCuadrado = 240; 
    float yCuadrado = 240;
    float rCuadrado = 45;
-   float cyCuadrado = 120;
    
    float xTrapezoide = 0;
    float yTrapezoide = 0;
    float rTrapezoide = 0;
-   float cxTrapezoide = 60;
-   float cyTrapezoide = 180;
-
 
 
 void setup(){
@@ -60,7 +49,7 @@ void setup(){
 
 void draw(){
   
-    background(100, 100, 100);
+    background(fondo);
     //translate(360,60);
   
  /* FIGURAS */
@@ -137,68 +126,80 @@ void draw(){
   
   /* MOVIMIENTO */
   
-        int colorMouse = get(mouseX, mouseY);
+    // Triángulo Grande 1
   
-      // Triángulo Grande 1
+      if (mousePressed && mouseButton == LEFT && (ctrlMov == 1)){
+        xTriGrande1 += mouseX-pmouseX;
+        yTriGrande1 += mouseY-pmouseY;
+      }
+      
+    // Triángulo Grande 2
   
-        if (colorMouse == amarillo){
-          if (mousePressed && mouseButton == LEFT) {
-            xTriGrande1 = mouseX - cxTriGrande1;
-            yTriGrande1 = mouseY - cyTriGrande1;
-          }          
-        }        
-        
-      // Triángulo Grande 2
-        
-        if (colorMouse == aguamarina){          
-          if (mousePressed && mouseButton == LEFT) {
-            xTriGrande2 = mouseX + cxTriGrande2;
-            yTriGrande2 = mouseY - cyTriGrande2;
-          } 
-        }        
-        
-      // Triángulo Mediano
-
-        if (colorMouse == naranja){          
-          if (mousePressed && mouseButton == LEFT) {
-            xTriMediano = mouseX + cxTriMediano;
-            yTriMediano = mouseY + cyTriMediano;
-          }
-        }        
-        
-      // Triángulo Pequeño 1
+      if (mousePressed && mouseButton == LEFT && (ctrlMov == 2)){
+        xTriGrande2 += mouseX-pmouseX;
+        yTriGrande2 += mouseY-pmouseY;
+      }
+      
+    // Triángulo Mediano
   
-        if (colorMouse == azul){
-          if (mousePressed && mouseButton == LEFT) {
-            xTriPequeno1 = mouseX + cxTriPequeno1;
-            yTriPequeno1 = mouseY + cyTriPequeno1;
-          }
-        }        
-        
-      // Triángulo Pequeño 2
+      if (mousePressed && mouseButton == LEFT && (ctrlMov == 3)){
+        xTriMediano += mouseX-pmouseX;
+        yTriMediano += mouseY-pmouseY;
+      }
+      
+    // Triángulo Pequeño 1
   
-        if (colorMouse == verde){
-          if (mousePressed && mouseButton == LEFT) {
-            xTriPequeno2 = mouseX - cxTriPequeno2;
-            yTriPequeno2 = mouseY + cyTriPequeno2;
-          }
-        }        
-        
-      // Cuadrado
+      if (mousePressed && mouseButton == LEFT && (ctrlMov == 4)){
+        xTriPequeno1 += mouseX-pmouseX;
+        yTriPequeno1 += mouseY-pmouseY;
+      }
+      
+    // Triángulo Pequeño 2
   
-        if (colorMouse == rojo){
-          if (mousePressed && mouseButton == LEFT) {
-            xCuadrado = mouseX;
-            yCuadrado = mouseY - cyCuadrado;
-          }
-        }        
-        
-      // Trapezoide
+      if (mousePressed && mouseButton == LEFT && (ctrlMov == 5)){
+        xTriPequeno2 += mouseX-pmouseX;
+        yTriPequeno2 += mouseY-pmouseY;
+      }
+      
+    // Cuadrado
   
-        if (colorMouse == morado){
-          if (mousePressed && mouseButton == LEFT) {
-            xTrapezoide = mouseX - cxTrapezoide;
-            yTrapezoide = mouseY - cyTrapezoide;
-          }
-        }    
+      if (mousePressed && mouseButton == LEFT && (ctrlMov == 6)){
+        xCuadrado += mouseX-pmouseX;
+        yCuadrado += mouseY-pmouseY;
+      }
+      
+    // Trapezoide
+  
+      if (mousePressed && mouseButton == LEFT && (ctrlMov == 7)){
+        xTrapezoide += mouseX-pmouseX;
+        yTrapezoide += mouseY-pmouseY;
+      }
 };
+        
+void mousePressed(){
+  int colorMouse = get(mouseX, mouseY);
+  if (mouseButton == LEFT && colorMouse == fondo){
+    ctrlMov = 0;
+  }
+  if (mouseButton == LEFT && colorMouse == amarillo){
+    ctrlMov = 1;
+  }
+  if (mouseButton == LEFT && colorMouse == aguamarina){
+    ctrlMov = 2;
+  }
+  if (mouseButton == LEFT && colorMouse == naranja){
+    ctrlMov = 3;
+  }
+  if (mouseButton == LEFT && colorMouse == azul){
+    ctrlMov = 4;
+  }
+  if (mouseButton == LEFT && colorMouse == verde){
+    ctrlMov = 5;
+  }
+  if (mouseButton == LEFT && colorMouse == rojo){
+    ctrlMov = 6;
+  }
+  if (mouseButton == LEFT && colorMouse == morado){
+    ctrlMov = 7;
+  }
+}
