@@ -13,36 +13,44 @@
    float xTriGrande1 = 0;
    float yTriGrande1 = 0;
    float rTriGrande1 = 0;
+   float cxTriGrande1 = 240;
+   float cyTriGrande1 = 90;
    
    float xTriGrande2 = 480;
    float yTriGrande2 = 0;
    float rTriGrande2 = 90;
+   float cxTriGrande2 = 90;
+   float cyTriGrande2 = 240;
    
    float xTriMediano = 240;
    float yTriMediano = 480;
    float rTriMediano = 180;
+   float cxTriMediano = 170;
+   float cyTriMediano = 70;
    
    float xTriPequeno1 = 480;
    float yTriPequeno1 = 480;
    float rTriPequeno1 = 180;
+   float cxTriPequeno1 = 120;
+   float cyTriPequeno1 = 50;
    
    float xTriPequeno2 = 120;
    float yTriPequeno2 = 360;
    float rTriPequeno2 = 270;
+   float cxTriPequeno2 = 50;
+   float cyTriPequeno2 = 120;
    
    float xCuadrado = 240; 
    float yCuadrado = 240;
    float rCuadrado = 45;
+   float cyCuadrado = 120;
    
    float xTrapezoide = 0;
    float yTrapezoide = 0;
    float rTrapezoide = 0;
- 
- /* MOVIMIENTO */
+   float cxTrapezoide = 60;
+   float cyTrapezoide = 180;
 
-    float x = 0;  // x+360
-    float y = 0;  // y+160
-    
 
 
 void setup(){
@@ -135,171 +143,62 @@ void draw(){
   
         if (colorMouse == amarillo){
           if (mousePressed && mouseButton == LEFT) {
-            xTriGrande1 = mouseX;
-            yTriGrande1 = mouseY;
+            xTriGrande1 = mouseX - cxTriGrande1;
+            yTriGrande1 = mouseY - cyTriGrande1;
           }          
-          if (keyPressed && key == CODED) {
-            if (keyCode == RIGHT){
-              xTriGrande1 += 5;
-            }
-            if (keyCode == LEFT){
-              xTriGrande1 -= 5;
-            }
-            if (keyCode == UP){
-              yTriGrande1 -= 5;
-            }
-            if (keyCode == DOWN){
-              yTriGrande1 += 5;
-            }
-          }
-        }
-        
+        }        
         
       // Triángulo Grande 2
         
-        if (colorMouse == aguamarina){
-          
+        if (colorMouse == aguamarina){          
           if (mousePressed && mouseButton == LEFT) {
-            xTriGrande2 = mouseX;
-            yTriGrande2 = mouseY;
-          }
-          
-          if (keyPressed && key == CODED) {
-            if (keyCode == RIGHT){
-              xTriGrande2 += 5;
-            }
-            if (keyCode == LEFT){
-              xTriGrande2 -= 5;
-            }
-            if (keyCode == UP){
-              yTriGrande2 -= 5;
-            }
-            if (keyCode == DOWN){
-              yTriGrande2 += 5;
-            }
-          }
-        }
-        
+            xTriGrande2 = mouseX + cxTriGrande2;
+            yTriGrande2 = mouseY - cyTriGrande2;
+          } 
+        }        
         
       // Triángulo Mediano
 
-        if (colorMouse == naranja){
-          
+        if (colorMouse == naranja){          
           if (mousePressed && mouseButton == LEFT) {
-            xTriMediano = mouseX;
-            yTriMediano = mouseY;
+            xTriMediano = mouseX + cxTriMediano;
+            yTriMediano = mouseY + cyTriMediano;
           }
-          
-          if (keyPressed && key == CODED) {
-            if (keyCode == RIGHT){
-              xTriMediano += 5;
-            }
-            if (keyCode == LEFT){
-              xTriMediano -= 5;
-            }
-            if (keyCode == UP){
-              yTriMediano -= 5;
-            }
-            if (keyCode == DOWN){
-              yTriMediano += 5;
-            }
-          }
-        }
-        
+        }        
         
       // Triángulo Pequeño 1
   
         if (colorMouse == azul){
           if (mousePressed && mouseButton == LEFT) {
-            xTriPequeno1 = mouseX;
-            yTriPequeno1 = mouseY;
-          }          
-          if (keyPressed && key == CODED) {
-            if (keyCode == RIGHT){
-              xTriPequeno1 += 5;
-            }
-            if (keyCode == LEFT){
-              xTriPequeno1 -= 5;
-            }
-            if (keyCode == UP){
-              yTriPequeno1 -= 5;
-            }
-            if (keyCode == DOWN){
-              yTriPequeno1 += 5;
-            }
+            xTriPequeno1 = mouseX + cxTriPequeno1;
+            yTriPequeno1 = mouseY + cyTriPequeno1;
           }
-        }
-        
+        }        
         
       // Triángulo Pequeño 2
   
         if (colorMouse == verde){
           if (mousePressed && mouseButton == LEFT) {
-            xTriPequeno2 = mouseX;
-            yTriPequeno2 = mouseY;
-          }          
-          if (keyPressed && key == CODED) {
-            if (keyCode == RIGHT){
-              xTriPequeno2 += 5;
-            }
-            if (keyCode == LEFT){
-              xTriPequeno2 -= 5;
-            }
-            if (keyCode == UP){
-              yTriPequeno2 -= 5;
-            }
-            if (keyCode == DOWN){
-              yTriPequeno2 += 5;
-            }
+            xTriPequeno2 = mouseX - cxTriPequeno2;
+            yTriPequeno2 = mouseY + cyTriPequeno2;
           }
-        }
-        
+        }        
         
       // Cuadrado
   
         if (colorMouse == rojo){
           if (mousePressed && mouseButton == LEFT) {
             xCuadrado = mouseX;
-            yCuadrado = mouseY;
-          }          
-          if (keyPressed && key == CODED) {
-            if (keyCode == RIGHT){
-              xCuadrado += 5;
-            }
-            if (keyCode == LEFT){
-              xCuadrado -= 5;
-            }
-            if (keyCode == UP){
-              yCuadrado -= 5;
-            }
-            if (keyCode == DOWN){
-              yCuadrado += 5;
-            }
+            yCuadrado = mouseY - cyCuadrado;
           }
-        }
-        
+        }        
         
       // Trapezoide
   
         if (colorMouse == morado){
           if (mousePressed && mouseButton == LEFT) {
-            xTrapezoide = mouseX;
-            yTrapezoide = mouseY;
-          }          
-          if (keyPressed && key == CODED) {
-            if (keyCode == RIGHT){
-              xTrapezoide += 5;
-            }
-            if (keyCode == LEFT){
-              xTrapezoide -= 5;
-            }
-            if (keyCode == UP){
-              yTrapezoide -= 5;
-            }
-            if (keyCode == DOWN){
-              yTrapezoide += 5;
-            }
+            xTrapezoide = mouseX - cxTrapezoide;
+            yTrapezoide = mouseY - cyTrapezoide;
           }
-        }
-    
+        }    
 };
