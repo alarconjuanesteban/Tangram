@@ -66,6 +66,7 @@
 void setup(){
   size(1200, 600);
   noStroke();
+  rectMode(CENTER);
 }
 
 void draw(){
